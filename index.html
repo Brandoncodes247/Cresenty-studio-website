@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cresenty Studio is a game development company focusing on creating captivating and meaningful gaming experiences.">
+    <meta name="keywords" content="game development, indie games, Scout X, Rogue Jumpman, Sinfall">
+    <title>Cresenty Studio - Game Development</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e;
+            color: #fff;
+            line-height: 1.6;
+            background-image: url('Cresenty Background image.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        header {
+            background-color: rgba(10, 10, 10, 0.8);
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 5px solid #ff6f61;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header img.logo {
+            width: 120px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 4rem;
+            font-family: 'Press Start 2P', cursive;
+            color: #ff6f61;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #bbb;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        nav {
+            background-color: rgba(51, 51, 51, 0.8);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 3px solid #ff6f61;
+        }
+
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        nav a:hover {
+            color: #ff6f61;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(30, 30, 30, 0.9);
+            border-radius: 15px;
+            border: 2px solid #ff6f61;
+        }
+
+        section {
+            margin: 60px 0;
+        }
+
+        h2 {
+            color: #ff6f61;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        h3 {
+            color: #ff6f61;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .game-grid, .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .game-card, .team-card {
+            background-color: rgba(51, 51, 51, 0.9);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 2px solid #ff6f61;
+        }
+
+        .game-card:hover, .team-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 111, 97, 0.5);
+        }
+
+        .game-card img, .team-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 10px;
+            border: 2px solid #ff6f61;
+        }
+
+        .game-card h3, .team-card h3 {
+            margin: 20px 0 15px;
+            font-size: 1.8rem;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .game-card p, .team-card p {
+            color: #bbb;
+            font-size: 1.1rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .small-team {
+            text-align: center;
+            margin: 60px 0;
+            padding: 40px 20px;
+            background-color: rgba(10, 10, 10, 0.9);
+            border-radius: 15px;
+            border: 2px solid #ff6f61;
+        }
+
+        .small-team h2 {
+            font-size: 3rem;
+            color: #ff6f61;
+            margin-bottom: 10px;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .small-team p {
+            font-size: 1.2rem;
+            color: #bbb;
+            max-width: 800px;
+            margin: 0 auto;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .upcoming-games {
+            background-color: rgba(10, 10, 10, 0.9);
+            padding: 40px 20px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid #ff6f61;
+        }
+
+        .upcoming-games h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .upcoming-games p {
+            font-size: 1.1rem;
+            color: #bbb;
+            max-width: 800px;
+            margin: 0 auto;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        footer {
+            background-color: rgba(10, 10, 10, 0.9);
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+            border-top: 5px solid #ff6f61;
+        }
+
+        footer a {
+            color: #ff6f61;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Modal for image lightbox */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content img {
+            width: 80%;
+            height: auto;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Responsive Design for Mobile */
+        @media (max-width: 768px) {
+            body {
+                font-size: 1rem;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .game-grid, .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .game-card, .team-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Cresenty Logo.jpg" alt="Cresenty Logo" class="logo">
+        <h1>Cresenty Studio</h1>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#games">Our Games</a>
+        <a href="#team">The Team</a>
+        <a href="#upcoming">Upcoming</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Us</h2>
+            <p>At <strong>Cresenty Studio</strong>, we are passionate about game development. We focus on creating games that we think should exist in today's world. By that, we mean games with a deeper meaning and at the same time, very captivating experiences that truly focus on the user. From visuals to soundtracks and the storytelling in those games—<em>woah, breathtaking stuff</em>.</p>
+        </section>
+
+        <!-- Small Team Section -->
+        <div class="small-team">
+            <h2>SMALL TEAM</h2>
+            <p>We are a resilient team of two, working tirelessly to make the games you desire come to life. We structure and make decisions together in unison, coming up with spectacular games that leave a lasting impression.</p>
+        </div>
+
+        <!-- Games Section -->
+        <section id="games">
+            <h2>Our Games</h2>
+            <div class="game-grid">
+                <div class="game-card">
+                    <img src="ScoutX.jpg" alt="Scout X" class="game-image">
+                    <h3>Scout X</h3>
+                    <p>An action-packed adventure game based on the award-winning anime <em>Attack On Titan (AOT)</em>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Games Section -->
+        <section id="upcoming">
+            <h2>Upcoming Games</h2>
+            <div class="upcoming-games">
+                <h3>Rogue Jumpman</h3>
+                <p>We're working on an exciting new arcade game that combines fast-paced action with retro vibes. Stay tuned for more updates!</p>
+            </div>
+            <div class="upcoming-games">
+                <h3>Sinfall</h3>
+                <p>An indie game with <strong>amazing animations</strong> and <strong>captivating storytelling</strong>. Sinfall is a journey into a world of mystery, choices, and consequences. Get ready to be immersed!</p>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team">
+            <h2>Meet the Team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="abram.jpg" alt="Abram Makeni">
+                    <h3>Abram Makeni</h3>
+                    <p>Game Developer and artist</p>
+                    <p>Abuu is a game developer passionate about art and animation, also makes fire soundtracks for our games.</p>
+                </div>
+                <div class="team-card">
+                    <img src="brandon.jpg" alt="Brandon Kimutai">
+                    <h3>Brandon Kimutai</h3>
+                    <p>Game developer and script writer</p>
+                    <p>Brandon creates the scripts and works to bring our games to life.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Interested in collaborating or learning more about our work? Reach out to us at <a href="mailto:cresentystudio@gmail.com" target="_blank">cresentystudio@gmail.com</a>.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Cresenty Studio. All rights reserved.
+            Follow us on <a href="https://twitter.com/cresentystudio">Twitter</a> | 
+            <a href="https://instagram.com/cresentystudio">Instagram</a> | 
+            <a href="https://tiktok.com/@cresentystudio">Tiktok</a></p>
+    </footer>
+
+    <script>
+        // JavaScript for image lightbox
+        const images = document.querySelectorAll('.game-card img');
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                const src = image.src;
+                const modal = document.createElement('div');
+                modal.classList.add('modal');
+                modal.innerHTML = `<div class="modal-content"><img src="${src}" alt="Game Image"/><span class="close">&times;</span></div>`;
+                document.body.appendChild(modal);
+                
+                const close = modal.querySelector('.close');
+                close.addEventListener('click', () => modal.remove());
+            });
+        });
+    </script>
+</body>
+</html>
