@@ -216,7 +216,11 @@
             font-family: 'Orbitron', sans-serif;
         }
 
+<<<<<<< HEAD
     
+=======
+        /* Countdown Timer Styles */
+>>>>>>> 3b22ee7499acf050709ea8aa42b4cfef1a3fcc3c
         .countdown-timer {
             display: flex;
             justify-content: center;
@@ -271,7 +275,11 @@
             padding: 20px;
         }
 
+<<<<<<< HEAD
         
+=======
+        /* Updated Newsletter Styles */
+>>>>>>> 3b22ee7499acf050709ea8aa42b4cfef1a3fcc3c
         .neon-signup {
             background: rgba(0,0,0,0.7);
             border: 2px solid #00f3ff;
@@ -320,7 +328,11 @@
             transform: translateY(-2px);
         }
 
+<<<<<<< HEAD
         
+=======
+        /* Subscription Response Messages */
+>>>>>>> 3b22ee7499acf050709ea8aa42b4cfef1a3fcc3c
         .subscription-response {
             margin-top: 20px;
             padding: 15px;
@@ -354,7 +366,11 @@
             100% { transform: translate(0); }
         }
 
+<<<<<<< HEAD
         
+=======
+        /* Loading Animation */
+>>>>>>> 3b22ee7499acf050709ea8aa42b4cfef1a3fcc3c
         .button-loading .button-text {
             visibility: hidden;
             opacity: 0;
@@ -381,7 +397,11 @@
             to { transform: rotate(1turn); }
         }
 
+<<<<<<< HEAD
         
+=======
+        /* Progress Bar Styles */
+>>>>>>> 3b22ee7499acf050709ea8aa42b4cfef1a3fcc3c
         .dev-progress {
             margin: 40px auto;
             max-width: 600px;
@@ -423,7 +443,11 @@
             transition: width 1s ease;
         }
 
+<<<<<<< HEAD
         
+=======
+        /* Enhanced Social Media Styles */
+>>>>>>> 3b22ee7499acf050709ea8aa42b4cfef1a3fcc3c
         .social-container {
             display: flex;
             justify-content: center;
@@ -497,7 +521,11 @@
             opacity: 1;
         }
 
+<<<<<<< HEAD
         
+=======
+        /* Glitch Effect */
+>>>>>>> 3b22ee7499acf050709ea8aa42b4cfef1a3fcc3c
         .glitch-effect {
             position: relative;
         }
@@ -706,11 +734,19 @@
                     <div class="progress-container">
                         <p>Jetpack Rampage</p>
                         <div class="progress-bar">
+<<<<<<< HEAD
                             <div class="progress-fill" style="width: 97%"></div>
                         </div>
                         <p>Sinfall</p>
                         <div class="progress-bar">
                             <div class="progress-fill" style="width: 24%"></div>
+=======
+                            <div class="progress-fill" style="width: 85%"></div>
+                        </div>
+                        <p>Sinfall</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 15%"></div>
+>>>>>>> 3b22ee7499acf050709ea8aa42b4cfef1a3fcc3c
                         </div>
                     </div>
                 </div>
@@ -740,7 +776,11 @@
             </div>
         </section>
 
+<<<<<<< HEAD
         
+=======
+        <!-- Updated Newsletter Section -->
+>>>>>>> 3b22ee7499acf050709ea8aa42b4cfef1a3fcc3c
         <section id="newsletter" class="neon-signup">
             <h2>JOIN OUR NEWSLETTER</h2>
             <p>Get exclusive updates and early access</p>
@@ -759,7 +799,11 @@
             </form>
         </section>
 
+<<<<<<< HEAD
         
+=======
+        <!-- Contact Section -->
+>>>>>>> 3b22ee7499acf050709ea8aa42b4cfef1a3fcc3c
         <section id="contact">
             <h2>Contact Us</h2>
             <p>Interested in collaborating or learning more about our work? Reach out to us at <a href="mailto:cresentystudio@gmail.com" target="_blank">cresentystudio@gmail.com</a>.</p>
@@ -800,7 +844,11 @@
             });
         });
 
+<<<<<<< HEAD
         
+=======
+        // Countdown Timer for Jetpack Rampage
+>>>>>>> 3b22ee7499acf050709ea8aa42b4cfef1a3fcc3c
         function updateCountdown() {
             const releaseDate = new Date('May 1, 2025 00:00:00').getTime();
             const now = new Date().getTime();
@@ -824,7 +872,13 @@
         }
 
         const countdownTimer = setInterval(updateCountdown, 1000);
+<<<<<<< HEAD
         updateCountdown(); 
+=======
+        updateCountdown(); // Initial call
+
+        // Enhanced Newsletter Form Handling
+>>>>>>> 3b22ee7499acf050709ea8aa42b4cfef1a3fcc3c
         const newsletterForm = document.getElementById('newsletter-form');
         const submitButton = newsletterForm.querySelector('button');
         const buttonText = newsletterForm.querySelector('.button-text');
@@ -833,6 +887,7 @@
         newsletterForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
+<<<<<<< HEAD
             
             submitButton.classList.add('button-loading');
             responseEl.style.display = 'none';
@@ -841,13 +896,28 @@
             const email = formData.get('email').trim();
             
             
+=======
+            // Show loading state
+            submitButton.classList.add('button-loading');
+            responseEl.style.display = 'none';
+            
+            // Get form data
+            const formData = new FormData(this);
+            const email = formData.get('email').trim();
+            
+            // Simple validation
+>>>>>>> 3b22ee7499acf050709ea8aa42b4cfef1a3fcc3c
             if (!email || !email.includes('@')) {
                 showResponse('Please enter a valid email address', false);
                 submitButton.classList.remove('button-loading');
                 return;
             }
             
+<<<<<<< HEAD
             
+=======
+            // Submit to FormSubmit.co
+>>>>>>> 3b22ee7499acf050709ea8aa42b4cfef1a3fcc3c
             fetch(this.action, {
                 method: 'POST',
                 body: formData,
