@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        
         body {
             font-family: 'Orbitron', sans-serif;
             margin: 0;
@@ -217,7 +216,6 @@
             font-family: 'Orbitron', sans-serif;
         }
 
-        
         .countdown-timer {
             display: flex;
             justify-content: center;
@@ -272,7 +270,6 @@
             padding: 20px;
         }
 
-        
         .neon-signup {
             background: rgba(0,0,0,0.7);
             border: 2px solid #00f3ff;
@@ -321,7 +318,6 @@
             transform: translateY(-2px);
         }
 
-        
         .subscription-response {
             margin-top: 20px;
             padding: 15px;
@@ -355,7 +351,6 @@
             100% { transform: translate(0); }
         }
 
-        
         .button-loading .button-text {
             visibility: hidden;
             opacity: 0;
@@ -382,7 +377,6 @@
             to { transform: rotate(1turn); }
         }
 
-        
         .dev-progress {
             margin: 40px auto;
             max-width: 600px;
@@ -424,7 +418,6 @@
             transition: width 1s ease;
         }
 
-        
         .social-container {
             display: flex;
             justify-content: center;
@@ -498,7 +491,6 @@
             opacity: 1;
         }
 
-        
         .glitch-effect {
             position: relative;
         }
@@ -535,7 +527,6 @@
             text-decoration: underline;
         }
 
-        
         .modal {
             position: fixed;
             top: 0;
@@ -579,7 +570,504 @@
             border: 2px solid #ff6f61;
         }
 
-        
+        /* Enhanced Support Buttons Styles */
+        .support-section {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .support-button {
+            display: inline-block;
+            padding: 18px 35px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-align: center;
+            min-width: 220px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .donate-button {
+            background: linear-gradient(135deg, #ff6f61 0%, #ff8f61 50%, #ff6f61 100%);
+            color: #000;
+            border: none;
+            text-shadow: 0 1px 1px rgba(255,255,255,0.3);
+            animation: donate-pulse 2s infinite;
+        }
+
+        .donate-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 111, 97, 0.6);
+            animation: none;
+        }
+
+        .donate-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.1) 100%);
+            z-index: -1;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .donate-button:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes donate-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 111, 97, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 111, 97, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 111, 97, 0); }
+        }
+
+        .sponsor-button {
+            background: linear-gradient(135deg, rgba(0, 243, 255, 0.1) 0%, rgba(0, 243, 255, 0.3) 50%, rgba(0, 243, 255, 0.1) 100%);
+            color: #00f3ff;
+            border: 2px solid #00f3ff;
+            text-shadow: 0 0 5px rgba(0, 243, 255, 0.5);
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+        }
+
+        .sponsor-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 243, 255, 0.6);
+            background: linear-gradient(135deg, rgba(0, 243, 255, 0.2) 0%, rgba(0, 243, 255, 0.4) 50%, rgba(0, 243, 255, 0.2) 100%);
+        }
+
+        .sponsor-button::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border: 2px solid #00f3ff;
+            border-radius: 8px;
+            animation: sponsor-border 3s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes sponsor-border {
+            0% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
+            25% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
+            50% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
+            75% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
+            100% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
+        }
+
+        .support-description {
+            text-align: center;
+            margin-bottom: 30px;
+            font-family: 'Orbitron', sans-serif;
+            color: #bbb;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Sponsor Modal Styles */
+        .sponsor-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            animation: modal-fade-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes modal-fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .sponsor-modal-content {
+            background: linear-gradient(145deg, #1a1a1a, #222222);
+            padding: 40px;
+            border-radius: 15px;
+            border: 2px solid #00f3ff;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.4),
+                        0 0 60px rgba(0, 243, 255, 0.2);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .sponsor-modal-content::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, 
+                #00f3ff, 
+                #ff6f61, 
+                #00f3ff);
+            background-size: 200% 200%;
+            z-index: -1;
+            border-radius: 16px;
+            animation: gradient-border 3s ease infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes gradient-border {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .sponsor-modal h3 {
+            color: #00f3ff;
+            text-align: center;
+            margin-bottom: 25px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.5rem;
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.7);
+            letter-spacing: 1px;
+        }
+
+        .sponsor-modal p {
+            color: #bbb;
+            margin-bottom: 25px;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .sponsor-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sponsor-form input,
+        .sponsor-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #00f3ff;
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .sponsor-form input::placeholder,
+        .sponsor-form textarea::placeholder {
+            color: #666;
+        }
+
+        .sponsor-form input:focus,
+        .sponsor-form textarea:focus {
+            outline: none;
+            border-color: #ff6f61;
+            box-shadow: 0 0 15px rgba(255, 111, 97, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .sponsor-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .sponsor-form button {
+            align-self: center;
+            margin-top: 10px;
+            background: linear-gradient(135deg, #00f3ff, #00b8c4);
+            color: #000;
+            border: none;
+            padding: 15px 40px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 5px 15px rgba(0, 243, 255, 0.3);
+        }
+
+        .sponsor-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 243, 255, 0.5);
+        }
+
+        .sponsor-form button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.2) 100%);
+            z-index: -1;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .sponsor-form button:hover::before {
+            opacity: 1;
+        }
+/* Modal Background Overlay */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Darker background */
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+/* Modal Content Container */
+.modal-content {
+  background: rgba(20, 20, 30, 0.95); /* Almost solid dark background */
+  border: 2px solid cyan;
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 450px;
+  max-width: 90%;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  position: relative;
+  text-align: center;
+  animation: popUp 0.4s ease;
+  box-shadow: 0 0 20px cyan;
+}
+
+/* Modal Pop-up Animation */
+@keyframes popUp {
+  0% { opacity: 0; transform: scale(0.8);}
+  100% { opacity: 1; transform: scale(1);}
+}
+
+/* Close Button */
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  color: cyan;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.close-modal:hover {
+  transform: scale(1.2);
+}
+
+/* Form Styles */
+.sponsor-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sponsor-form input,
+.sponsor-form textarea {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid cyan;
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  width: 100%;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.sponsor-form input::placeholder,
+.sponsor-form textarea::placeholder {
+  color: #aaa;
+}
+
+.sponsor-form input:focus,
+.sponsor-form textarea:focus {
+  border-color: #00f0ff;
+  box-shadow: 0 0 10px #00f0ff;
+  outline: none;
+}
+
+/* Submit Button */
+.sponsor-form button[type="submit"] {
+  background: cyan;
+  border: none;
+  color: black;
+  padding: 14px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.sponsor-form button[type="submit"]:hover {
+  background: #00f0ff;
+  transform: translateY(-3px);
+}
+
+/* Success / Error message */
+.subscription-response {
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.subscription-success {
+  color: #00ff99;
+}
+
+.subscription-error {
+  color: #ff0066;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .modal-content {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .sponsor-form input,
+  .sponsor-form textarea {
+    font-size: 14px;
+  }
+}
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: #00f3ff;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #00f3ff;
+        }
+
+        .close-modal:hover {
+            color: #ff6f61;
+            transform: rotate(90deg) scale(1.1);
+            border-color: #ff6f61;
+            background: rgba(255, 111, 97, 0.1);
+        }
+
+        /* Modal response message */
+        .modal-response {
+            display: none;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            animation: glitch-text 0.5s infinite;
+        }
+
+        .modal-success {
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid #0f0;
+            color: #0f0;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+
+        .modal-error {
+            background: rgba(255, 0, 0, 0.1);
+            border: 1px solid #f00;
+            color: #f00;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .sponsor-modal-content {
+                padding: 30px 20px;
+            }
+
+            .sponsor-modal h3 {
+                font-size: 1.2rem;
+                margin-bottom: 15px;
+            }
+
+            .sponsor-modal p {
+                font-size: 0.9rem;
+                margin-bottom: 15px;
+            }
+
+            .sponsor-form input,
+            .sponsor-form textarea {
+                padding: 12px;
+                margin-bottom: 15px;
+                font-size: 0.9rem;
+            }
+
+            .sponsor-form textarea {
+                height: 120px;
+            }
+
+            .sponsor-form button {
+                padding: 12px 30px;
+                font-size: 0.8rem;
+            }
+
+            .close-modal {
+                width: 35px;
+                height: 35px;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sponsor-modal-content {
+                padding: 25px 15px;
+            }
+
+            .sponsor-modal h3 {
+                font-size: 1rem;
+            }
+
+            .sponsor-form button {
+                width: 100%;
+            }
+        }
         @media (max-width: 768px) {
             body {
                 font-size: 1rem;
@@ -630,8 +1118,66 @@
             .social-icon i {
                 font-size: 20px;
             }
+
+            .support-section {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .support-button {
+                width: 80%;
+                padding: 12px 20px;
+            }
         }
+        .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+footer {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    position: relative;
+    z-index: 1;
+}
+
     </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cresenty Studio - Game Development">
+    <meta name="author" content="Cresenty Studio">
+    <title>Cresenty Studio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Assuming you have a CSS file for styles -->
 </head>
 <body>
     <header>
@@ -657,29 +1203,26 @@
             <p>At <strong>Cresenty Studio</strong>, we are passionate about game development. We focus on creating games that we think should exist in today's world. By that, we mean games with a deeper meaning and at the same time, very captivating experiences that truly focus on the user. From visuals to soundtracks and the storytelling in those games—<em>breathtaking stuff</em>.</p>
         </section>
 
-        
         <div class="small-team">
             <h2>SMALL TEAM</h2>
             <p>We are a resilient team of two, working tirelessly to make the games you desire come to life. We structure and make decisions together in unison, coming up with spectacular games that leave a lasting impression.</p>
         </div>
 
-        
         <section id="games">
             <h2>Our Games</h2>
             <div class="game-grid">
                 <div class="game-card">
-                    <img src="ScoutX.jpg" alt="Scout X" class="game-image">
+                    <img src="ScoutX.jpg" alt="Scout X" class="game-image" loading="lazy">
                     <h3>Scout X</h3>
                     <p>An action-packed adventure game based on the award-winning anime <em>Attack On Titan (AOT)</em>.</p>
                 </div>
             </div>
         </section>
 
-        
         <section id="upcoming">
             <h2>Upcoming Games</h2>
             <div class="upcoming-games">
-                <h3>Jetpack rampage</h3>
+                <h3>Jetpack Rampage</h3>
                 <p>Jetpack up a deadly tower—dodge spikes, blast enemies, and fight to survive in this intense retro climb. Coming soon!</p>
                 
                 <div class="countdown-timer">
@@ -707,7 +1250,7 @@
                     <div class="progress-container">
                         <p>Jetpack Rampage</p>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 85%"></div>
+                            <div class="progress-fill" style="width: 96%"></div>
                         </div>
                         <p>Sinfall</p>
                         <div class="progress-bar">
@@ -722,7 +1265,6 @@
             </div>
         </section>
 
-        
         <section id="team">
             <h2>Meet the Team</h2>
             <div class="team-grid">
@@ -741,7 +1283,6 @@
             </div>
         </section>
 
-        
         <section id="newsletter" class="neon-signup">
             <h2>JOIN OUR NEWSLETTER</h2>
             <p>Get exclusive updates and early access</p>
@@ -760,12 +1301,47 @@
             </form>
         </section>
 
-
         <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Interested in collaborating or learning more about our work? Reach out to us at <a href="mailto:cresentystudio@gmail.com" target="_blank">cresentystudio@gmail.com</a>.</p>
+            <h2>Contact & Support</h2>
+            <p>Are you interested in collaborating or learning more about our work? Reach out to us at <a href="mailto:cresentystudio@gmail.com" target="_blank">cresentystudio@gmail.com</a>.</p>
+            
+            <div class="support-description">
+                <p>Love our work? Consider supporting us to help create more amazing games!</p>
+            </div>
+            
+            <div class="support-section">
+                <a href="https://www.paypal.com/your-donation-link" class="support-button donate-button" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-heart"></i> DONATE
+                </a>
+                <a href="#" class="support-button sponsor-button" id="sponsor-button">
+                    <i class="fas fa-handshake"></i> SPONSOR
+                </a>
+            </div>
         </section>
     </div>
+
+    <!-- Sponsor Modal Form -->
+<div id="sponsor-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>BECOME A SPONSOR</h2>
+        <p>Interested in sponsoring our projects? Fill out the form below...</p>
+        <form class="sponsor-form" id="sponsor-form" action="https://formsubmit.co/cresentystudio@gmail.com" method="POST">
+            <input type="text" name="name" id="sponsor-name" placeholder="Your Name" required>
+            <input type="email" name="email" id="sponsor-email" placeholder="Your Email" required>
+            <textarea name="message" id="sponsor-message" rows="4" placeholder="Tell us about your sponsorship idea..." required></textarea>
+
+            <!-- Optional Hidden Fields -->
+            <input type="hidden" name="_subject" value="New Sponsorship Request!">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="box">
+            <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+
+            <button type="submit">SUBMIT</button>
+        </form>
+        <div id="sponsor-response-message" class="response-message"></div>
+    </div>
+</div>
 
     <footer>
         <div class="social-container">
@@ -786,105 +1362,219 @@
     </footer>
 
     <script>
-        
-        const images = document.querySelectorAll('.game-card img');
-        images.forEach(image => {
-            image.addEventListener('click', () => {
-                const src = image.src;
-                const modal = document.createElement('div');
-                modal.classList.add('modal');
-                modal.innerHTML = `<div class="modal-content"><img src="${src}" alt="Game Image"/><span class="close">&times;</span></div>`;
-                document.body.appendChild(modal);
-                
-                const close = modal.querySelector('.close');
-                close.addEventListener('click', () => modal.remove());
-            });
+        // Modal functionality for sponsor form
+        document.getElementById('sponsor-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('sponsor-modal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
         });
 
-        
-        function updateCountdown() {
-            const releaseDate = new Date('May 1, 2025 00:00:00').getTime();
-            const now = new Date().getTime();
-            const distance = releaseDate - now;
+        document.querySelector('.close-modal').addEventListener('click', function() {
+            document.getElementById('sponsor-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-
-            if (distance < 0) {
-                clearInterval(countdownTimer);
-                document.querySelector('.countdown-timer').innerHTML = '<span class="released-text">JETPACK RAMPAGE IS OUT NOW!</span>';
-                document.querySelector('.release-text').style.display = 'none';
+        window.addEventListener('click', function(e) {
+            if (e.target === document.getElementById('sponsor-modal')) {
+                document.getElementById('sponsor-modal').style.display = 'none';
+                document.body.style.overflow = 'auto';
             }
+        });
+    </script>
+</body>
+</html>
+<script>
+// Image Modal Functionality
+const images = document.querySelectorAll('.game-card img');
+images.forEach(image => {
+    image.addEventListener('click', () => {
+        const src = image.src;
+        const modal = document.createElement('div');
+        modal.classList.add('modal');
+        modal.innerHTML = `
+            <div class="modal-content">
+                <img src="${src}" alt="Game Image"/>
+                <span class="close">&times;</span>
+            </div>`;
+        document.body.appendChild(modal);
+
+        // Close the modal when clicking on the close button
+        modal.querySelector('.close').addEventListener('click', () => modal.remove());
+    });
+});
+
+// Countdown Timer to 10th June 2025
+function updateCountdown() {
+    const releaseDate = new Date('June 10, 2025 00:00:00').getTime();
+    const now = new Date().getTime();
+    const distance = releaseDate - now;
+
+    if (distance <= 0) {
+        clearInterval(countdownTimer);
+        document.querySelector('.countdown-timer').innerHTML = '<span class="released-text">JETPACK RAMPAGE IS OUT NOW!</span>';
+        const releaseText = document.querySelector('.release-text');
+        if (releaseText) releaseText.style.display = 'none';
+        return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById('days').textContent = days.toString().padStart(2, '0');
+    document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+    document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+    document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+}
+
+const countdownTimer = setInterval(updateCountdown, 1000);
+updateCountdown();
+
+// Newsletter Subscription Form
+const newsletterForm = document.getElementById('newsletter-form');
+if (newsletterForm) {
+    const submitButton = newsletterForm.querySelector('button');
+    const responseEl = document.getElementById('subscription-response');
+
+    newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        submitButton.classList.add('button-loading');
+        responseEl.style.display = 'none';
+
+        const formData = new FormData(this);
+        const email = formData.get('email').trim();
+
+        // Basic email validation
+        if (!email || !email.includes('@')) {
+            showResponse('Please enter a valid email address', false);
+            submitButton.classList.remove('button-loading');
+            return;
         }
 
-        const countdownTimer = setInterval(updateCountdown, 1000);
-        updateCountdown(); 
-
-        
-        const newsletterForm = document.getElementById('newsletter-form');
-        const submitButton = newsletterForm.querySelector('button');
-        const buttonText = newsletterForm.querySelector('.button-text');
-        const responseEl = document.getElementById('subscription-response');
-
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            
-            submitButton.classList.add('button-loading');
-            responseEl.style.display = 'none';
-            
-            
-            const formData = new FormData(this);
-            const email = formData.get('email').trim();
-            
-            
-            if (!email || !email.includes('@')) {
-                showResponse('Please enter a valid email address', false);
-                submitButton.classList.remove('button-loading');
-                return;
+        // Submit the form via Fetch API
+        fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        })
+        .then(response => {
+            if (response.ok) {
+                showResponse(`Success! You're subscribed with ${email}`, true);
+                this.reset();
+            } else {
+                throw new Error('Network response was not ok');
             }
-            
-           
+        })
+        .catch(error => {
+            showResponse('Subscription failed. Please try again later.', false);
+            console.error('Error:', error);
+        })
+        .finally(() => {
+            submitButton.classList.remove('button-loading');
+        });
+    });
+
+    // Display response message
+    function showResponse(message, isSuccess) {
+        responseEl.textContent = message;
+        responseEl.className = `subscription-response ${isSuccess ? 'subscription-success' : 'subscription-error'}`;
+        responseEl.style.display = 'block';
+
+        setTimeout(() => {
+            responseEl.style.display = 'none';
+        }, 5000);
+    }
+}
+
+// Sponsor Modal Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const sponsorButton = document.getElementById('sponsor-button');
+    const sponsorModal = document.getElementById('sponsor-modal');
+    const closeModal = document.querySelector('.close-modal');
+    const sponsorForm = document.getElementById('sponsor-form');
+
+    // Open sponsor modal
+    if (sponsorButton && sponsorModal) {
+        sponsorButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            sponsorModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Close sponsor modal when clicking close button
+        if (closeModal) {
+            closeModal.addEventListener('click', function() {
+                sponsorModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        }
+
+        // Close modal if clicking outside of the modal
+        window.addEventListener('click', function(e) {
+            if (e.target === sponsorModal) {
+                sponsorModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+
+    // Handle sponsor form submission
+    if (sponsorForm) {
+        sponsorForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const submitButton = this.querySelector('button[type="submit"]');
+            if (submitButton) submitButton.classList.add('button-loading');
+
+            const formData = new FormData(this);
+
+            // Submit the sponsor form via Fetch API
             fetch(this.action, {
                 method: 'POST',
                 body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
+                headers: { 'Accept': 'application/json' }
             })
             .then(response => {
                 if (response.ok) {
-                    showResponse(`Success! You're subscribed with ${email}`, true);
+                    showSponsorResponse('Thank you for your sponsorship interest! We will contact you soon.', true);
                     this.reset();
                 } else {
                     throw new Error('Network response was not ok');
                 }
             })
             .catch(error => {
-                showResponse('Subscription failed. Please try again later.', false);
+                showSponsorResponse('Submission failed. Please try again later.', false);
                 console.error('Error:', error);
             })
             .finally(() => {
-                submitButton.classList.remove('button-loading');
+                if (submitButton) submitButton.classList.remove('button-loading');
+                sponsorModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
             });
         });
 
-        function showResponse(message, isSuccess) {
-            responseEl.textContent = message;
+        // Display sponsor response message
+        function showSponsorResponse(message, isSuccess) {
+            const responseEl = document.createElement('div');
             responseEl.className = `subscription-response ${isSuccess ? 'subscription-success' : 'subscription-error'}`;
-            responseEl.style.display = 'block';
-        
+            responseEl.textContent = message;
+            responseEl.style.marginTop = '20px';
+
+            sponsorForm.appendChild(responseEl);
+
             setTimeout(() => {
-                responseEl.style.display = 'none';
+                responseEl.remove();
             }, 5000);
         }
-    </script>
-</body>
-</html>
+    }
+});
+
+// Donate Button Debug
+const donateButton = document.querySelector('.donate-button');
+if (donateButton) {
+    donateButton.addEventListener('click', function() {
+        console.log('User clicked Donate button');
+    });
+}
+</script>
+    
