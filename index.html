@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* General Styles */
+        
         body {
             font-family: 'Orbitron', sans-serif;
             margin: 0;
@@ -217,7 +217,7 @@
             font-family: 'Orbitron', sans-serif;
         }
 
-        /* Countdown Timer Styles */
+        
         .countdown-timer {
             display: flex;
             justify-content: center;
@@ -272,7 +272,7 @@
             padding: 20px;
         }
 
-        /* Updated Newsletter Styles */
+        
         .neon-signup {
             background: rgba(0,0,0,0.7);
             border: 2px solid #00f3ff;
@@ -321,7 +321,7 @@
             transform: translateY(-2px);
         }
 
-        /* Subscription Response Messages */
+        
         .subscription-response {
             margin-top: 20px;
             padding: 15px;
@@ -355,7 +355,7 @@
             100% { transform: translate(0); }
         }
 
-        /* Loading Animation */
+        
         .button-loading .button-text {
             visibility: hidden;
             opacity: 0;
@@ -382,7 +382,7 @@
             to { transform: rotate(1turn); }
         }
 
-        /* Progress Bar Styles */
+        
         .dev-progress {
             margin: 40px auto;
             max-width: 600px;
@@ -424,7 +424,7 @@
             transition: width 1s ease;
         }
 
-        /* Enhanced Social Media Styles */
+        
         .social-container {
             display: flex;
             justify-content: center;
@@ -498,7 +498,7 @@
             opacity: 1;
         }
 
-        /* Glitch Effect */
+        
         .glitch-effect {
             position: relative;
         }
@@ -535,7 +535,7 @@
             text-decoration: underline;
         }
 
-        /* Modal for image lightbox */
+        
         .modal {
             position: fixed;
             top: 0;
@@ -579,7 +579,7 @@
             border: 2px solid #ff6f61;
         }
 
-        /* Responsive Design for Mobile */
+        
         @media (max-width: 768px) {
             body {
                 font-size: 1rem;
@@ -651,19 +651,19 @@
     </nav>
 
     <div class="container">
-        <!-- About Section -->
+        
         <section id="about">
             <h2>About Us</h2>
             <p>At <strong>Cresenty Studio</strong>, we are passionate about game development. We focus on creating games that we think should exist in today's world. By that, we mean games with a deeper meaning and at the same time, very captivating experiences that truly focus on the user. From visuals to soundtracks and the storytelling in those games—<em>breathtaking stuff</em>.</p>
         </section>
 
-        <!-- Small Team Section -->
+        
         <div class="small-team">
             <h2>SMALL TEAM</h2>
             <p>We are a resilient team of two, working tirelessly to make the games you desire come to life. We structure and make decisions together in unison, coming up with spectacular games that leave a lasting impression.</p>
         </div>
 
-        <!-- Games Section -->
+        
         <section id="games">
             <h2>Our Games</h2>
             <div class="game-grid">
@@ -675,7 +675,7 @@
             </div>
         </section>
 
-        <!-- Upcoming Games Section -->
+        
         <section id="upcoming">
             <h2>Upcoming Games</h2>
             <div class="upcoming-games">
@@ -722,7 +722,7 @@
             </div>
         </section>
 
-        <!-- Team Section -->
+        
         <section id="team">
             <h2>Meet the Team</h2>
             <div class="team-grid">
@@ -741,7 +741,7 @@
             </div>
         </section>
 
-        <!-- Updated Newsletter Section -->
+        
         <section id="newsletter" class="neon-signup">
             <h2>JOIN OUR NEWSLETTER</h2>
             <p>Get exclusive updates and early access</p>
@@ -760,7 +760,7 @@
             </form>
         </section>
 
-        <!-- Contact Section -->
+
         <section id="contact">
             <h2>Contact Us</h2>
             <p>Interested in collaborating or learning more about our work? Reach out to us at <a href="mailto:cresentystudio@gmail.com" target="_blank">cresentystudio@gmail.com</a>.</p>
@@ -786,7 +786,7 @@
     </footer>
 
     <script>
-        // JavaScript for image lightbox
+        
         const images = document.querySelectorAll('.game-card img');
         images.forEach(image => {
             image.addEventListener('click', () => {
@@ -801,7 +801,7 @@
             });
         });
 
-        // Countdown Timer for Jetpack Rampage
+        
         function updateCountdown() {
             const releaseDate = new Date('May 1, 2025 00:00:00').getTime();
             const now = new Date().getTime();
@@ -825,9 +825,9 @@
         }
 
         const countdownTimer = setInterval(updateCountdown, 1000);
-        updateCountdown(); // Initial call
+        updateCountdown(); 
 
-        // Enhanced Newsletter Form Handling
+        
         const newsletterForm = document.getElementById('newsletter-form');
         const submitButton = newsletterForm.querySelector('button');
         const buttonText = newsletterForm.querySelector('.button-text');
@@ -836,22 +836,22 @@
         newsletterForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Show loading state
+            
             submitButton.classList.add('button-loading');
             responseEl.style.display = 'none';
             
-            // Get form data
+            
             const formData = new FormData(this);
             const email = formData.get('email').trim();
             
-            // Simple validation
+            
             if (!email || !email.includes('@')) {
                 showResponse('Please enter a valid email address', false);
                 submitButton.classList.remove('button-loading');
                 return;
             }
             
-            // Submit to FormSubmit.co
+           
             fetch(this.action, {
                 method: 'POST',
                 body: formData,
