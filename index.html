@@ -1,47 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script 
-    src="https://www.paypal.com/sdk/js?client-id=BAAzMpl5z__q8dtIJct4jDh9BnQ_-x8HGty8e05uBX6QifW9bAntvQ_6lQ5CUx-YQPJGfHMApwQOmqjhYs&components=buttons&currency=USD">
-  </script>
-  
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      // Ensure the donate button exists before adding event listener
-      const donateButton = document.getElementById('donate-button');
-      const paypalButtonContainer = document.getElementById('paypal-button-container');
-  
-      if (donateButton && paypalButtonContainer) {
-        // Set PayPal button container to be hidden initially
-        paypalButtonContainer.style.display = 'none';
-  
-        donateButton.addEventListener('click', function(e) {
-          e.preventDefault(); // Prevent default action of anchor
-          paypalButtonContainer.style.display = 'block'; // Show PayPal button
-  
-          // Render the PayPal button dynamically
-          paypal.Buttons({
-            createOrder: function(data, actions) {
-              return actions.order.create({
-                purchase_units: [{
-                  amount: {
-                    value: '10.00' // Set the donation amount (you can adjust this as needed)
-                  }
-                }]
-              });
-            },
-            onApprove: function(data, actions) {
-              return actions.order.capture().then(function(details) {
-                alert('Thank you for your donation, ' + details.payer.name.given_name);
-              });
-            }
-          }).render('#paypal-button-container');
-        });
-      } else {
-        console.error("Donate button or PayPal button container not found.");
-      }
-    });
-  </script>
+   
   
  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1213,6 +1173,8 @@ footer {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR-REAL-CLIENT-ID&components=hosted-buttons&disable-funding=venmo&currency=USD"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cresenty Studio - Game Development">
@@ -1222,6 +1184,7 @@ footer {
     <link rel="stylesheet" href="styles.css"> <!-- Assuming you have a CSS file for styles -->
 </head>
 <body>
+    
     <header>
         <img src="Cresenty Logo.jpg" alt="Cresenty Logo" class="logo">
         <h1 class="glitch-effect">Cresenty Studio</h1>
@@ -1352,8 +1315,8 @@ footer {
             </div>
             
             <div class="support-section">
-                <a href="https://www.paypal.com/your-donation-link" class="support-button donate-button" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-heart"></i> DONATE
+                <a href="#"  class="support-button donate-button" id="donate-button">
+                <i class="fas fa-heart"></i> DONATE
                 </a>
                 <a href="#" class="support-button sponsor-button" id="sponsor-button">
                     <i class="fas fa-handshake"></i> SPONSOR
@@ -1404,29 +1367,7 @@ footer {
     </footer>
 
     <script>
-        // Modal functionality for sponsor form
-        document.getElementById('sponsor-button').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('sponsor-modal').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        });
-
-        document.querySelector('.close-modal').addEventListener('click', function() {
-            document.getElementById('sponsor-modal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
-
-        window.addEventListener('click', function(e) {
-            if (e.target === document.getElementById('sponsor-modal')) {
-                document.getElementById('sponsor-modal').style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-    </script>
-</body>
-</html>
-<script>
-// Image Modal Functionality
+// === Image Modal Functionality ===
 const images = document.querySelectorAll('.game-card img');
 images.forEach(image => {
     image.addEventListener('click', () => {
@@ -1440,12 +1381,12 @@ images.forEach(image => {
             </div>`;
         document.body.appendChild(modal);
 
-        // Close the modal when clicking on the close button
+        // Close the modal
         modal.querySelector('.close').addEventListener('click', () => modal.remove());
     });
 });
 
-// Countdown Timer to 10th June 2025
+// === Countdown Timer to 10th June 2025 ===
 function updateCountdown() {
     const releaseDate = new Date('June 10, 2025 00:00:00').getTime();
     const now = new Date().getTime();
@@ -1469,11 +1410,10 @@ function updateCountdown() {
     document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
     document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
 }
-
 const countdownTimer = setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// Newsletter Subscription Form
+// === Newsletter Subscription Form ===
 const newsletterForm = document.getElementById('newsletter-form');
 if (newsletterForm) {
     const submitButton = newsletterForm.querySelector('button');
@@ -1487,14 +1427,12 @@ if (newsletterForm) {
         const formData = new FormData(this);
         const email = formData.get('email').trim();
 
-        // Basic email validation
         if (!email || !email.includes('@')) {
             showResponse('Please enter a valid email address', false);
             submitButton.classList.remove('button-loading');
             return;
         }
 
-        // Submit the form via Fetch API
         fetch(this.action, {
             method: 'POST',
             body: formData,
@@ -1517,7 +1455,6 @@ if (newsletterForm) {
         });
     });
 
-    // Display response message
     function showResponse(message, isSuccess) {
         responseEl.textContent = message;
         responseEl.className = `subscription-response ${isSuccess ? 'subscription-success' : 'subscription-error'}`;
@@ -1529,14 +1466,13 @@ if (newsletterForm) {
     }
 }
 
-// Sponsor Modal Functionality
+// === Sponsor Modal Functionality ===
 document.addEventListener('DOMContentLoaded', function() {
     const sponsorButton = document.getElementById('sponsor-button');
     const sponsorModal = document.getElementById('sponsor-modal');
     const closeModal = document.querySelector('.close-modal');
     const sponsorForm = document.getElementById('sponsor-form');
 
-    // Open sponsor modal
     if (sponsorButton && sponsorModal) {
         sponsorButton.addEventListener('click', function(e) {
             e.preventDefault();
@@ -1544,7 +1480,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = 'hidden';
         });
 
-        // Close sponsor modal when clicking close button
         if (closeModal) {
             closeModal.addEventListener('click', function() {
                 sponsorModal.style.display = 'none';
@@ -1552,7 +1487,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        // Close modal if clicking outside of the modal
         window.addEventListener('click', function(e) {
             if (e.target === sponsorModal) {
                 sponsorModal.style.display = 'none';
@@ -1561,7 +1495,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Handle sponsor form submission
     if (sponsorForm) {
         sponsorForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -1570,7 +1503,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const formData = new FormData(this);
 
-            // Submit the sponsor form via Fetch API
             fetch(this.action, {
                 method: 'POST',
                 body: formData,
@@ -1595,13 +1527,11 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // Display sponsor response message
         function showSponsorResponse(message, isSuccess) {
             const responseEl = document.createElement('div');
             responseEl.className = `subscription-response ${isSuccess ? 'subscription-success' : 'subscription-error'}`;
             responseEl.textContent = message;
             responseEl.style.marginTop = '20px';
-
             sponsorForm.appendChild(responseEl);
 
             setTimeout(() => {
@@ -1611,12 +1541,47 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Donate Button Debug
-const donateButton = document.querySelector('.donate-button');
-if (donateButton) {
-    donateButton.addEventListener('click', function() {
-        console.log('User clicked Donate button');
+// === Donate Button & PayPal Hosted Button Integration ===
+document.addEventListener('DOMContentLoaded', function() {
+    const donateButton = document.getElementById('donate-button');
+    const paypalWrapper = document.getElementById('paypal-wrapper');
+    const paypalContainer = document.getElementById('paypal-container-VZ5W7FX9FA6TJ');
+
+    if (donateButton && paypalWrapper && paypalContainer) {
+        donateButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('User clicked Donate button');
+            paypalWrapper.style.display = 'block';
+
+            if (!paypalContainer.hasChildNodes()) {
+                paypal.HostedButtons({
+                    hostedButtonId: "VZ5W7FX9FA6TJ"
+                }).render("#paypal-container-VZ5W7FX9FA6TJ");
+            }
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const donateButton = document.getElementById('donate-button');
+    const paypalContainer = document.getElementById('paypal-container');
+    const paypalButtonArea = document.getElementById('paypal-button-area');
+
+    donateButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Show the PayPal container
+        paypalContainer.style.display = 'block';
+
+        // Render PayPal button only once
+        if (!paypalButtonArea.hasChildNodes()) {
+            paypal.HostedButtons({
+                hostedButtonId: "YOUR-HOSTED-BUTTON-ID"
+            }).render("#paypal-button-area");
+        }
     });
-}
+});
+
+
 </script>
     
