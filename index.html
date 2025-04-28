@@ -1,7 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <script 
+    src="https://www.paypal.com/sdk/js?client-id=BAAzMpl5z__q8dtIJct4jDh9BnQ_-x8HGty8e05uBX6QifW9bAntvQ_6lQ5CUx-YQPJGfHMApwQOmqjhYs&components=buttons&currency=USD">
+  </script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Ensure the donate button exists before adding event listener
+      const donateButton = document.getElementById('donate-button');
+      const paypalButtonContainer = document.getElementById('paypal-button-container');
+  
+      if (donateButton && paypalButtonContainer) {
+        // Set PayPal button container to be hidden initially
+        paypalButtonContainer.style.display = 'none';
+  
+        donateButton.addEventListener('click', function(e) {
+          e.preventDefault(); // Prevent default action of anchor
+          paypalButtonContainer.style.display = 'block'; // Show PayPal button
+  
+          // Render the PayPal button dynamically
+          paypal.Buttons({
+            createOrder: function(data, actions) {
+              return actions.order.create({
+                purchase_units: [{
+                  amount: {
+                    value: '10.00' // Set the donation amount (you can adjust this as needed)
+                  }
+                }]
+              });
+            },
+            onApprove: function(data, actions) {
+              return actions.order.capture().then(function(details) {
+                alert('Thank you for your donation, ' + details.payer.name.given_name);
+              });
+            }
+          }).render('#paypal-button-container');
+        });
+      } else {
+        console.error("Donate button or PayPal button container not found.");
+      }
+    });
+  </script>
+  
+ <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cresenty Studio is a game development company focusing on creating captivating and meaningful gaming experiences.">
     <meta name="keywords" content="game development, indie games, Scout X, Rogue Jumpman, Sinfall">
