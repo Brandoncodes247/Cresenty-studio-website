@@ -8,8 +8,8 @@
     <title>Cresenty Studio - Game Development</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* General Styles */
         body {
             font-family: 'Orbitron', sans-serif;
             margin: 0;
@@ -32,6 +32,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
 
         header img.logo {
@@ -51,6 +52,26 @@
             font-size: 1.2rem;
             color: #bbb;
             font-family: 'Orbitron', sans-serif;
+        }
+
+        .pixel-animation {
+            position: absolute;
+            right: 50px;
+            width: 80px;
+            height: 80px;
+        }
+
+        .pixel-character {
+            width: 100%;
+            height: 100%;
+            background: url('pixel-jetpack.gif') no-repeat center;
+            image-rendering: pixelated;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
         }
 
         nav {
@@ -115,6 +136,8 @@
             text-align: center;
             transition: transform 0.3s ease;
             border: 2px solid #ff6f61;
+            position: relative;
+            overflow: hidden;
         }
 
         .game-card:hover, .team-card:hover {
@@ -128,6 +151,11 @@
             object-fit: contain;
             border-radius: 10px;
             border: 2px solid #ff6f61;
+            transition: transform 0.5s ease;
+        }
+
+        .game-card:hover img {
+            transform: rotateY(180deg);
         }
 
         .game-card h3, .team-card h3 {
@@ -188,6 +216,305 @@
             font-family: 'Orbitron', sans-serif;
         }
 
+    
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: rgba(10, 10, 10, 0.7);
+            border-radius: 10px;
+            border: 2px solid #ff6f61;
+            max-width: 600px;
+        }
+
+        .timer-segment {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            min-width: 80px;
+        }
+
+        .timer-number {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 2rem;
+            color: #ff6f61;
+            text-shadow: 0 0 10px rgba(255, 111, 97, 0.7);
+            margin-bottom: 5px;
+        }
+
+        .timer-label {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            color: #bbb;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .release-text {
+            font-family: 'Orbitron', sans-serif;
+            color: #ff6f61;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-top: -10px;
+            text-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
+        }
+
+        .released-text {
+            font-family: 'Press Start 2P', cursive;
+            color: #ff6f61;
+            font-size: 1.5rem;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(255, 111, 97, 0.7);
+            padding: 20px;
+        }
+
+        
+        .neon-signup {
+            background: rgba(0,0,0,0.7);
+            border: 2px solid #00f3ff;
+            padding: 40px;
+            text-align: center;
+            margin: 60px auto;
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+        }
+
+        .cyber-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .cyber-form input {
+            background: #111;
+            border: 1px solid #00f3ff;
+            color: #00f3ff;
+            padding: 15px;
+            width: 70%;
+            font-family: 'Orbitron', sans-serif;
+            border-radius: 5px;
+        }
+
+        .glow-button {
+            background: #ff6f61;
+            color: #000;
+            border: none;
+            padding: 15px 25px;
+            font-family: 'Press Start 2P', cursive;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .glow-button:hover {
+            box-shadow: 0 0 15px #ff6f61;
+            transform: translateY(-2px);
+        }
+
+        
+        .subscription-response {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Orbitron', sans-serif;
+            display: none;
+            text-align: center;
+            animation: glitch-text 0.5s infinite;
+        }
+
+        .subscription-success {
+            background: rgba(0,255,0,0.1);
+            border: 1px solid #0f0;
+            color: #0f0;
+            text-shadow: 0 0 10px rgba(0,255,0,0.5);
+        }
+
+        .subscription-error {
+            background: rgba(255,0,0,0.1);
+            border: 1px solid #f00;
+            color: #f00;
+            text-shadow: 0 0 10px rgba(255,0,0,0.5);
+        }
+
+        @keyframes glitch-text {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        
+        .button-loading .button-text {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .button-loading::after {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            border: 4px solid transparent;
+            border-top-color: #000;
+            border-radius: 50%;
+            animation: button-loading-spinner 1s ease infinite;
+        }
+
+        @keyframes button-loading-spinner {
+            from { transform: rotate(0turn); }
+            to { transform: rotate(1turn); }
+        }
+
+        
+        .dev-progress {
+            margin: 40px auto;
+            max-width: 600px;
+        }
+
+        .dev-progress h4 {
+            font-family: 'Press Start 2P', cursive;
+            color: #ff6f61;
+            text-align: center;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .progress-container {
+            background: rgba(51, 51, 51, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #ff6f61;
+        }
+
+        .progress-container p {
+            font-family: 'Orbitron', sans-serif;
+            color: #bbb;
+            margin-bottom: 5px;
+        }
+
+        .progress-bar {
+            height: 20px;
+            background: #222;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6f61, #ff8f61);
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+
+        
+        .social-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(30, 30, 30, 0.7);
+            border: 2px solid #ff6f61;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-icon::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, 
+                        rgba(255, 111, 97, 0.8) 0%, 
+                        rgba(255, 111, 97, 0) 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 111, 97, 0.5);
+        }
+
+        .social-icon:hover::before {
+            opacity: 1;
+        }
+
+        .social-icon i {
+            font-size: 24px;
+            color: #ff6f61;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover i {
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 111, 97, 0.8);
+        }
+
+        .social-tooltip {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(10, 10, 10, 0.9);
+            color: #ff6f61;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            white-space: nowrap;
+            border: 1px solid #ff6f61;
+        }
+
+        .social-icon:hover .social-tooltip {
+            opacity: 1;
+        }
+
+        
+        .glitch-effect {
+            position: relative;
+        }
+
+        .glitch-effect:hover {
+            animation: glitch 0.5s linear infinite;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
         footer {
             background-color: rgba(10, 10, 10, 0.9);
             color: #fff;
@@ -207,7 +534,7 @@
             text-decoration: underline;
         }
 
-        /* Modal for image lightbox */
+        
         .modal {
             position: fixed;
             top: 0;
@@ -218,23 +545,40 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
         }
 
         .modal-content img {
-            width: 80%;
-            height: auto;
+            max-width: 100%;
+            max-height: 80vh;
+            border: 5px solid #ff6f61;
+            border-radius: 10px;
         }
 
         .close {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: -30px;
+            right: -30px;
             color: white;
             font-size: 2rem;
             cursor: pointer;
+            background: rgba(0,0,0,0.7);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #ff6f61;
         }
 
-        /* Responsive Design for Mobile */
+        
         @media (max-width: 768px) {
             body {
                 font-size: 1rem;
@@ -244,6 +588,10 @@
                 font-size: 2.5rem;
             }
 
+            .pixel-animation {
+                display: none;
+            }
+
             .game-grid, .team-grid {
                 grid-template-columns: 1fr;
             }
@@ -251,13 +599,46 @@
             .game-card, .team-card {
                 padding: 15px;
             }
+
+            .countdown-timer {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .timer-segment {
+                min-width: 70px;
+            }
+
+            .timer-number {
+                font-size: 1.5rem;
+            }
+
+            .cyber-form input {
+                width: 100%;
+            }
+
+            .social-container {
+                gap: 15px;
+            }
+
+            .social-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .social-icon i {
+                font-size: 20px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <img src="Cresenty Logo.jpg" alt="Cresenty Logo" class="logo">
-        <h1>Cresenty Studio</h1>
+        <h1 class="glitch-effect">Cresenty Studio</h1>
+        <div class="pixel-animation">
+            <div class="pixel-character"></div>
+        </div>
     </header>
 
     <nav>
@@ -269,19 +650,19 @@
     </nav>
 
     <div class="container">
-        <!-- About Section -->
+        
         <section id="about">
             <h2>About Us</h2>
-            <p>At <strong>Cresenty Studio</strong>, we are passionate about game development. We focus on creating games that we think should exist in today's world. By that, we mean games with a deeper meaning and at the same time, very captivating experiences that truly focus on the user. From visuals to soundtracks and the storytelling in those games—<em>woah, breathtaking stuff</em>.</p>
+            <p>At <strong>Cresenty Studio</strong>, we are passionate about game development. We focus on creating games that we think should exist in today's world. By that, we mean games with a deeper meaning and at the same time, very captivating experiences that truly focus on the user. From visuals to soundtracks and the storytelling in those games—<em>breathtaking stuff</em>.</p>
         </section>
 
-        <!-- Small Team Section -->
+        
         <div class="small-team">
             <h2>SMALL TEAM</h2>
             <p>We are a resilient team of two, working tirelessly to make the games you desire come to life. We structure and make decisions together in unison, coming up with spectacular games that leave a lasting impression.</p>
         </div>
 
-        <!-- Games Section -->
+        
         <section id="games">
             <h2>Our Games</h2>
             <div class="game-grid">
@@ -293,12 +674,46 @@
             </div>
         </section>
 
-        <!-- Upcoming Games Section -->
+        
         <section id="upcoming">
             <h2>Upcoming Games</h2>
             <div class="upcoming-games">
-                <h3>Rogue Jumpman</h3>
-                <p>We're working on an exciting new arcade game that combines fast-paced action with retro vibes. Stay tuned for more updates!</p>
+                <h3>Jetpack rampage</h3>
+                <p>Jetpack up a deadly tower—dodge spikes, blast enemies, and fight to survive in this intense retro climb. Coming soon!</p>
+                
+                <div class="countdown-timer">
+                    <div class="timer-segment">
+                        <span class="timer-number" id="days">00</span>
+                        <span class="timer-label">DAYS</span>
+                    </div>
+                    <div class="timer-segment">
+                        <span class="timer-number" id="hours">00</span>
+                        <span class="timer-label">HOURS</span>
+                    </div>
+                    <div class="timer-segment">
+                        <span class="timer-number" id="minutes">00</span>
+                        <span class="timer-label">MINUTES</span>
+                    </div>
+                    <div class="timer-segment">
+                        <span class="timer-number" id="seconds">00</span>
+                        <span class="timer-label">SECONDS</span>
+                    </div>
+                </div>
+                <p class="release-text">Until Jetpack Rampage Launches!</p>
+                
+                <div class="dev-progress">
+                    <h4>DEVELOPMENT PROGRESS</h4>
+                    <div class="progress-container">
+                        <p>Jetpack Rampage</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 97%"></div>
+                        </div>
+                        <p>Sinfall</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 24%"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="upcoming-games">
                 <h3>Sinfall</h3>
@@ -306,26 +721,45 @@
             </div>
         </section>
 
-        <!-- Team Section -->
+        
         <section id="team">
             <h2>Meet the Team</h2>
             <div class="team-grid">
                 <div class="team-card">
-                    <img src="abram.jpg" alt="Abram Makeni">
-                    <h3>Abram Makeni</h3>
+                    <img src="abramNew.jpg" alt="Abram">
+                    <h3>Abram</h3>
                     <p>Game Developer and artist</p>
                     <p>Abuu is a game developer passionate about art and animation, also makes fire soundtracks for our games.</p>
                 </div>
                 <div class="team-card">
-                    <img src="brandon.jpg" alt="Brandon Kimutai">
-                    <h3>Brandon Kimutai</h3>
+                    <img src="brandonNew.jpg" alt="Brandon">
+                    <h3>Brandon</h3>
                     <p>Game developer and script writer</p>
-                    <p>Brandon is a game developer and creates the scripts working to bring our games to life.</p>
+                    <p>Brandon creates the scripts and works to bring our games to life.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
+        
+        <section id="newsletter" class="neon-signup">
+            <h2>JOIN OUR NEWSLETTER</h2>
+            <p>Get exclusive updates and early access</p>
+            <form action="https://formsubmit.co/cresentystudio@gmail.com" 
+                  method="POST"
+                  class="cyber-form"
+                  id="newsletter-form">
+                <input type="hidden" name="_subject" value="New Cresenty Studio Subscriber!">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+                <input type="email" name="email" placeholder="YOUR@EMAIL.COM" required>
+                <button type="submit" class="glow-button">
+                    <span class="button-text">SUBSCRIBE</span>
+                </button>
+                <div id="subscription-response" class="subscription-response"></div>
+            </form>
+        </section>
+
+        
         <section id="contact">
             <h2>Contact Us</h2>
             <p>Interested in collaborating or learning more about our work? Reach out to us at <a href="mailto:cresentystudio@gmail.com" target="_blank">cresentystudio@gmail.com</a>.</p>
@@ -333,14 +767,25 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Cresenty Studio. All rights reserved.
-            Follow us on <a href="https://twitter.com/cresentystudio">Twitter</a> | 
-            <a href="https://instagram.com/cresentystudio">Instagram</a> | 
-            <a href="https://tiktok.com/@cresentystudio">Tiktok</a></p>
+        <div class="social-container">
+            <a href="https://twitter.com/CresentyStudio" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-twitter"></i>
+                <span class="social-tooltip">Follow us on X</span>
+            </a>
+            <a href="https://instagram.com/cresenty.studio" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i>
+                <span class="social-tooltip">Follow us on Instagram</span>
+            </a>
+            <a href="https://tiktok.com/@cresenty.studio" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-tiktok"></i>
+                <span class="social-tooltip">Follow us on TikTok</span>
+            </a>
+        </div>
+        <p>&copy; 2025 Cresenty Studio. All rights reserved.</p>
     </footer>
 
     <script>
-        // JavaScript for image lightbox
+        
         const images = document.querySelectorAll('.game-card img');
         images.forEach(image => {
             image.addEventListener('click', () => {
@@ -354,6 +799,88 @@
                 close.addEventListener('click', () => modal.remove());
             });
         });
+
+        
+        function updateCountdown() {
+            const releaseDate = new Date('May 1, 2025 00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = releaseDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.querySelector('.countdown-timer').innerHTML = '<span class="released-text">JETPACK RAMPAGE IS OUT NOW!</span>';
+                document.querySelector('.release-text').style.display = 'none';
+            }
+        }
+
+        const countdownTimer = setInterval(updateCountdown, 1000);
+        updateCountdown(); 
+        const newsletterForm = document.getElementById('newsletter-form');
+        const submitButton = newsletterForm.querySelector('button');
+        const buttonText = newsletterForm.querySelector('.button-text');
+        const responseEl = document.getElementById('subscription-response');
+
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            
+            submitButton.classList.add('button-loading');
+            responseEl.style.display = 'none';
+        
+            const formData = new FormData(this);
+            const email = formData.get('email').trim();
+            
+            
+            if (!email || !email.includes('@')) {
+                showResponse('Please enter a valid email address', false);
+                submitButton.classList.remove('button-loading');
+                return;
+            }
+            
+            
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    showResponse(`Success! You're subscribed with ${email}`, true);
+                    this.reset();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            })
+            .catch(error => {
+                showResponse('Subscription failed. Please try again later.', false);
+                console.error('Error:', error);
+            })
+            .finally(() => {
+                submitButton.classList.remove('button-loading');
+            });
+        });
+
+        function showResponse(message, isSuccess) {
+            responseEl.textContent = message;
+            responseEl.className = `subscription-response ${isSuccess ? 'subscription-success' : 'subscription-error'}`;
+            responseEl.style.display = 'block';
+        
+            setTimeout(() => {
+                responseEl.style.display = 'none';
+            }, 5000);
+        }
     </script>
 </body>
 </html>
