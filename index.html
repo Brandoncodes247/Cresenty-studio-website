@@ -6,7 +6,7 @@
  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cresenty Studio is a game development company focusing on creating captivating and meaningful gaming experiences.">
-    <meta name="keywords" content="game development, indie games, Scout X, Rogue Jumpman, Sinfall">
+    <meta name="keywords" content="game development, indie games, Scout X, Rise of Mayhem, Sinfall">
     <title>Cresenty Studio - Game Development</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -572,7 +572,6 @@
             border: 2px solid #ff6f61;
         }
 
-        /* Enhanced Support Buttons Styles */
         .support-section {
             display: flex;
             justify-content: center;
@@ -681,7 +680,7 @@
             margin-right: auto;
         }
 
-        /* Sponsor Modal Styles */
+
         .sponsor-modal {
             display: none;
             position: fixed;
@@ -839,14 +838,14 @@
         .sponsor-form button:hover::before {
             opacity: 1;
         }
-/* Modal Background Overlay */
+
 .modal {
   display: none;
   position: fixed;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8); /* Darker background */
+  background: rgba(0, 0, 0, 0.8); 
   backdrop-filter: blur(5px);
   z-index: 9999;
   justify-content: center;
@@ -854,9 +853,9 @@
   overflow-y: auto;
 }
 
-/* Modal Content Container */
+
 .modal-content {
-  background: rgba(20, 20, 30, 0.95); /* Almost solid dark background */
+  background: rgba(20, 20, 30, 0.95); 
   border: 2px solid cyan;
   border-radius: 20px;
   padding: 40px 30px;
@@ -870,13 +869,12 @@
   box-shadow: 0 0 20px cyan;
 }
 
-/* Modal Pop-up Animation */
+
 @keyframes popUp {
   0% { opacity: 0; transform: scale(0.8);}
   100% { opacity: 1; transform: scale(1);}
 }
 
-/* Close Button */
 .close-modal {
   position: absolute;
   top: 15px;
@@ -890,7 +888,7 @@
   transform: scale(1.2);
 }
 
-/* Form Styles */
+
 .sponsor-form {
   margin-top: 20px;
   display: flex;
@@ -923,7 +921,7 @@
   outline: none;
 }
 
-/* Submit Button */
+
 .sponsor-form button[type="submit"] {
   background: cyan;
   border: none;
@@ -941,7 +939,7 @@
   transform: translateY(-3px);
 }
 
-/* Success / Error message */
+
 .subscription-response {
   margin-top: 15px;
   font-size: 16px;
@@ -955,7 +953,7 @@
   color: #ff0066;
 }
 
-/* Responsive */
+
 @media (max-width: 600px) {
   .modal-content {
     width: 90%;
@@ -993,7 +991,7 @@
             background: rgba(255, 111, 97, 0.1);
         }
 
-        /* Modal response message */
+        
         .modal-response {
             display: none;
             padding: 15px;
@@ -1018,7 +1016,7 @@
             text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
         }
 
-        /* Responsive adjustments */
+        
         @media (max-width: 768px) {
             .sponsor-modal-content {
                 padding: 30px 20px;
@@ -1181,7 +1179,7 @@ footer {
     <meta name="author" content="Cresenty Studio">
     <title>Cresenty Studio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css"> <!-- Assuming you have a CSS file for styles -->
+    <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
     
@@ -1227,7 +1225,7 @@ footer {
         <section id="upcoming">
             <h2>Upcoming Games</h2>
             <div class="upcoming-games">
-                <h3>Jetpack Rampage</h3>
+                <h3>Rise of Mayhem</h3>
                 <p>Jetpack up a deadly tower—dodge spikes, blast enemies, and fight to survive in this intense retro climb. Coming soon!</p>
                 
                 <div class="countdown-timer">
@@ -1248,12 +1246,12 @@ footer {
                         <span class="timer-label">SECONDS</span>
                     </div>
                 </div>
-                <p class="release-text">Until Jetpack Rampage Launches!</p>
+                <p class="release-text">Until Rise of Mayhem Launches!</p>
                 
                 <div class="dev-progress">
                     <h4>DEVELOPMENT PROGRESS</h4>
                     <div class="progress-container">
-                        <p>Jetpack Rampage</p>
+                        <p>Rise of Mayhem</p>
                         <div class="progress-bar">
                             <div class="progress-fill" style="width: 96%"></div>
                         </div>
@@ -1325,7 +1323,7 @@ footer {
         </section>
     </div>
 
-    <!-- Sponsor Modal Form -->
+    
 <div id="sponsor-modal" class="modal" style="display: none;">
     <div class="modal-content">
         <span class="close-modal">&times;</span>
@@ -1336,7 +1334,7 @@ footer {
             <input type="email" name="email" id="sponsor-email" placeholder="Your Email" required>
             <textarea name="message" id="sponsor-message" rows="4" placeholder="Tell us about your sponsorship idea..." required></textarea>
 
-            <!-- Optional Hidden Fields -->
+            
             <input type="hidden" name="_subject" value="New Sponsorship Request!">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="box">
@@ -1367,7 +1365,7 @@ footer {
     </footer>
 
     <script>
-// === Image Modal Functionality ===
+
 const images = document.querySelectorAll('.game-card img');
 images.forEach(image => {
     image.addEventListener('click', () => {
@@ -1381,12 +1379,12 @@ images.forEach(image => {
             </div>`;
         document.body.appendChild(modal);
 
-        // Close the modal
+    
         modal.querySelector('.close').addEventListener('click', () => modal.remove());
     });
 });
 
-// === Countdown Timer to 10th June 2025 ===
+
 function updateCountdown() {
     const releaseDate = new Date('June 10, 2025 00:00:00').getTime();
     const now = new Date().getTime();
@@ -1413,7 +1411,7 @@ function updateCountdown() {
 const countdownTimer = setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// === Newsletter Subscription Form ===
+
 const newsletterForm = document.getElementById('newsletter-form');
 if (newsletterForm) {
     const submitButton = newsletterForm.querySelector('button');
@@ -1466,7 +1464,7 @@ if (newsletterForm) {
     }
 }
 
-// === Sponsor Modal Functionality ===
+
 document.addEventListener('DOMContentLoaded', function() {
     const sponsorButton = document.getElementById('sponsor-button');
     const sponsorModal = document.getElementById('sponsor-modal');
@@ -1541,7 +1539,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// === Donate Button & PayPal Hosted Button Integration ===
 document.addEventListener('DOMContentLoaded', function() {
     const donateButton = document.getElementById('donate-button');
     const paypalWrapper = document.getElementById('paypal-wrapper');
@@ -1570,10 +1567,10 @@ document.addEventListener('DOMContentLoaded', function() {
     donateButton.addEventListener('click', function(e) {
         e.preventDefault();
         
-        // Show the PayPal container
+        
         paypalContainer.style.display = 'block';
 
-        // Render PayPal button only once
+
         if (!paypalButtonArea.hasChildNodes()) {
             paypal.HostedButtons({
                 hostedButtonId: "YOUR-HOSTED-BUTTON-ID"
