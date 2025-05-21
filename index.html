@@ -6,11 +6,15 @@
  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cresenty Studio is a game development company focusing on creating captivating and meaningful gaming experiences.">
-    <meta name="keywords" content="game development, indie games, Scout X, Rise of Mayhem, Sinfall">
+    <meta name="keywords" content="game development, indie games, Scout X, Rise to Mayhem, Sinfall">
     <title>Cresenty Studio - Game Development</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
     <style>
         body {
             font-family: 'Orbitron', sans-serif;
@@ -209,7 +213,24 @@
             margin-bottom: 20px;
             font-family: 'Press Start 2P', cursive;
         }
+ .upcoming-games img {
+    width: 100%;
+    max-width: 600px; /* Limits how large it can get on wide screens */
+    height: auto; /* Maintains aspect ratio */
+    max-height: 350px; /* Larger than other game images */
+    object-fit: contain;
+    border-radius: 10px;
+    border: 2px solid #ff6f61;
+    margin: 20px auto; /* Centers the image */
+    display: block; /* Ensures margin auto works for centering */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
 
+.upcoming-games img:hover {
+    transform: scale(1.02); /* Subtle hover effect */
+    box-shadow: 0 8px 25px rgba(255, 111, 97, 0.4);
+}
         .upcoming-games p {
             font-size: 1.1rem;
             color: #bbb;
@@ -1225,7 +1246,8 @@ footer {
         <section id="upcoming">
             <h2>Upcoming Games</h2>
             <div class="upcoming-games">
-                <h3>Rise of Mayhem</h3>
+                  <img src="Risetomayhem.jpg" alt="Rise to Mayhem" class="game-image" loading="lazy">
+                <h3>Rise to Mayhem</h3>
                 <p>Jetpack up a deadly tower—dodge spikes, blast enemies, and fight to survive in this intense retro climb. Coming soon!</p>
                 
                 <div class="countdown-timer">
@@ -1246,12 +1268,12 @@ footer {
                         <span class="timer-label">SECONDS</span>
                     </div>
                 </div>
-                <p class="release-text">Until Rise of Mayhem Launches!</p>
+                <p class="release-text">Until Rise to Mayhem Launches!</p>
                 
                 <div class="dev-progress">
                     <h4>DEVELOPMENT PROGRESS</h4>
                     <div class="progress-container">
-                        <p>Rise of Mayhem</p>
+                        <p>Rise to Mayhem</p>
                         <div class="progress-bar">
                             <div class="progress-fill" style="width: 96%"></div>
                         </div>
