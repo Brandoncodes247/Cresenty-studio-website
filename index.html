@@ -14,7 +14,17 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <style>
+        /* Base mobile fixes */
+        * {
+            max-width: 100vw;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+
         body {
+            width: 100%;
+            overflow-x: hidden;
+            position: relative;
             font-family: 'Orbitron', sans-serif;
             margin: 0;
             padding: 0;
@@ -236,136 +246,171 @@
             }
 
             .container {
-                width: 100%;
+                width: 100vw;
                 padding: 10px;
                 margin: 0;
                 border-radius: 0;
+                overflow-x: hidden;
             }
 
             .game-grid, .team-grid {
+                display: grid;
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 15px;
+                width: 100%;
+                padding: 0;
             }
 
             .game-card, .team-card {
+                width: 100%;
                 padding: 15px;
                 margin: 0;
+                box-sizing: border-box;
+            }
+
+            .game-card img, .team-card img {
+                width: 100%;
+                height: auto;
+                max-width: 100%;
             }
 
             .neon-signup {
                 width: 100%;
                 margin: 20px 0;
-                padding: 20px 10px;
+                padding: 15px;
                 box-sizing: border-box;
+                overflow: hidden;
             }
 
             .cyber-form {
+                display: flex;
                 flex-direction: column;
                 width: 100%;
+                gap: 10px;
             }
 
             .cyber-form input {
                 width: 100%;
+                max-width: 100%;
+                padding: 12px;
+                margin: 0;
                 box-sizing: border-box;
-                margin-bottom: 10px;
             }
 
             .glow-button {
                 width: 100%;
-                margin-top: 10px;
+                max-width: 100%;
+                margin: 10px 0 0 0;
+                padding: 12px;
+                box-sizing: border-box;
             }
 
             .countdown-timer {
+                display: flex;
                 flex-wrap: wrap;
-                gap: 10px;
+                justify-content: center;
+                gap: 8px;
                 padding: 10px;
                 width: 100%;
                 box-sizing: border-box;
             }
 
             .timer-segment {
-                min-width: 60px;
+                min-width: 45px;
+                padding: 5px;
             }
 
             .timer-number {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
 
-            .social-container {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .social-icon {
-                width: 40px;
-                height: 40px;
-            }
-
-            .social-icon i {
-                font-size: 20px;
-            }
-
-            .support-section {
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-                width: 100%;
-            }
-
-            .support-button {
-                width: 100%;
-                padding: 12px 20px;
-                box-sizing: border-box;
-            }
-
-            .modal-content {
-                width: 95%;
-                padding: 20px;
-                margin: 10px;
-            }
-
-            .sponsor-form input,
-            .sponsor-form textarea {
-                width: 100%;
-                box-sizing: border-box;
+            .timer-label {
+                font-size: 0.7rem;
             }
 
             .upcoming-games {
-                padding: 20px 10px;
+                width: 100%;
+                padding: 15px;
+                margin: 0;
+                box-sizing: border-box;
             }
 
             .upcoming-games img {
                 width: 100%;
                 height: auto;
+                max-width: 100%;
             }
 
-            .dev-progress {
+            .social-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
                 width: 100%;
+                padding: 0;
+            }
+
+            .social-icon {
+                width: 35px;
+                height: 35px;
+            }
+
+            .social-icon i {
+                font-size: 18px;
+            }
+
+            .support-section {
+                width: 100%;
+                padding: 0;
+                margin: 20px 0;
+            }
+
+            .support-button {
+                width: 100%;
+                max-width: 100%;
+                padding: 12px;
+                margin: 0;
                 box-sizing: border-box;
             }
 
-            .progress-container {
+            .modal-content {
+                width: 90vw;
+                max-width: 90vw;
                 padding: 15px;
+                margin: 10px;
+                box-sizing: border-box;
+            }
+
+            .sponsor-form input,
+            .sponsor-form textarea {
+                width: 100%;
+                max-width: 100%;
+                padding: 12px;
+                margin: 0 0 10px 0;
+                box-sizing: border-box;
             }
         }
 
         /* Additional fixes for very small screens */
         @media (max-width: 480px) {
             header h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .container {
                 padding: 5px;
             }
 
-            .game-card img, .team-card img {
-                height: 150px;
+            .cyber-form input {
+                font-size: 14px;
+            }
+
+            .glow-button {
+                font-size: 14px;
             }
 
             .timer-segment {
-                min-width: 50px;
+                min-width: 40px;
             }
 
             .timer-number {
@@ -373,7 +418,15 @@
             }
 
             .timer-label {
-                font-size: 0.7rem;
+                font-size: 0.6rem;
+            }
+
+            .game-card h3, .team-card h3 {
+                font-size: 1.4rem;
+            }
+
+            .game-card p, .team-card p {
+                font-size: 0.9rem;
             }
         }
 
