@@ -236,8 +236,10 @@
             }
 
             .container {
-                width: 95%;
-                padding: 15px;
+                width: 100%;
+                padding: 10px;
+                margin: 0;
+                border-radius: 0;
             }
 
             .game-grid, .team-grid {
@@ -247,27 +249,52 @@
 
             .game-card, .team-card {
                 padding: 15px;
+                margin: 0;
+            }
+
+            .neon-signup {
+                width: 100%;
+                margin: 20px 0;
+                padding: 20px 10px;
+                box-sizing: border-box;
+            }
+
+            .cyber-form {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .cyber-form input {
+                width: 100%;
+                box-sizing: border-box;
+                margin-bottom: 10px;
+            }
+
+            .glow-button {
+                width: 100%;
+                margin-top: 10px;
             }
 
             .countdown-timer {
                 flex-wrap: wrap;
                 gap: 10px;
+                padding: 10px;
+                width: 100%;
+                box-sizing: border-box;
             }
 
             .timer-segment {
-                min-width: 70px;
+                min-width: 60px;
             }
 
             .timer-number {
-                font-size: 1.5rem;
-            }
-
-            .cyber-form input {
-                width: 100%;
+                font-size: 1.2rem;
             }
 
             .social-container {
                 gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             .social-icon {
@@ -283,11 +310,70 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 20px;
+                width: 100%;
             }
 
             .support-button {
-                width: 80%;
+                width: 100%;
                 padding: 12px 20px;
+                box-sizing: border-box;
+            }
+
+            .modal-content {
+                width: 95%;
+                padding: 20px;
+                margin: 10px;
+            }
+
+            .sponsor-form input,
+            .sponsor-form textarea {
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .upcoming-games {
+                padding: 20px 10px;
+            }
+
+            .upcoming-games img {
+                width: 100%;
+                height: auto;
+            }
+
+            .dev-progress {
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .progress-container {
+                padding: 15px;
+            }
+        }
+
+        /* Additional fixes for very small screens */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 5px;
+            }
+
+            .game-card img, .team-card img {
+                height: 150px;
+            }
+
+            .timer-segment {
+                min-width: 50px;
+            }
+
+            .timer-number {
+                font-size: 1rem;
+            }
+
+            .timer-label {
+                font-size: 0.7rem;
             }
         }
 
